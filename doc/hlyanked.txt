@@ -1,0 +1,47 @@
+*hlyanked.txt*                                       Highlight yanked text.
+
+
+CONTENTS                                                     *HlYankedContents*
+
+    1. Introduction ................. |HlYankedIntroduction|
+    2. Requirements ................. |HlYankedRequirements|
+    3. Configuration ................ |HlYankedConfiguration|
+    5. License ...................... |HlYankedLicense|
+
+
+------------------------------------------------------------------------------
+INTRODUCTION                                          *HlYankedIntroduction*
+
+Highlight yanked text.
+
+
+------------------------------------------------------------------------------
+REQUIREMENTS                                         *HlYankedRequirements*
+
+Vim9.
+
+
+------------------------------------------------------------------------------
+CONFIGURATION                                           *HlYankedConfiguration*
+
+                                                           *g:hlyanked_hlgroup*
+Type: |highlight|
+Default: 'Visual'
+
+Highlight group to use when yanking.
+
+
+                                                         *g:hlyanked_timeout*
+Type: |number|
+Default: 400
+
+Highlight timeout value.
+
+
+------------------------------------------------------------------------------
+LICENSE                                                    *HlYankedLicense*
+
+Vim License.
+Copyright ©2023 Ubaldo Tiberi.
+
+vim:tw=78:et:ft=help:norl:
