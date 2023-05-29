@@ -1,8 +1,6 @@
 # vim-highlight-yanked
 
-Highlight yanked text in less than 100 lines of code.
-
-It requires Vim9.
+Highlight yanked text for Vim9.
 
 <p align="center">
 <img src="/hlyanked.gif" width="60%" height="60%">
