@@ -40,7 +40,13 @@ def HighlightYanked()
     var l0 = line("'[")
     var c0 = col("'[")
     var l1 = line("']")
-    var c1 = col("']")
+
+    var delta = 0
+    if l0 == l1
+        delta = len(v:event.regcontents[-1]) - (col("']") - c0)
+    endif
+
+    var c1 = col("']") + delta
 
     # For understanding the following regex read :h \% and mind that \_.* are
     # all characters including new lines.
@@ -58,7 +64,7 @@ enddef
 
 augroup HighlightYanked
     autocmd!
-    autocmd TextYankPost * if v:event.operator == 'y'
+    autocmd TextYankPost * if !v:event.visual && v:event.operator == 'y' && !empty(v:event.regtype)
         | HighlightYanked()
         | endif
 augroup END
