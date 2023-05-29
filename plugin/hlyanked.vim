@@ -19,7 +19,7 @@ if !exists('g:hlyanked_hlgroup')
 endif
 
 if !exists('g:hlyanked_timeout')
-    g:hlyanked_timeout = 2000
+    g:hlyanked_timeout = 400
 endif
 
 # ----------------------------------------------------
@@ -29,12 +29,8 @@ var timer_id = -1
 var match_id = -1
 
 def HighlightYanked()
-    # Remove existing timers.
-    # In practice this is never needed, but still...
-    if timer_id != -1
-        timer_stop(timer_id)
-        timer_id = -1
-    endif
+    # Remove leftover timers and highlights
+    KillHighlight()
 
     # Get extremes of yanking: start = (l0, c0), end = (l1, c1)
     var l0 = line("'[")
@@ -58,8 +54,22 @@ def HighlightYanked()
 enddef
 
 def RemoveHighlight(timer: number)
-    matchdelete(match_id)
-    match_id = -1
+    if match_id != -1
+        matchdelete(match_id)
+        match_id = -1
+    endif
+enddef
+
+def StopTimer(timer: number)
+    if timer_id != -1
+        timer_stop(timer_id)
+        timer_id = -1
+    endif
+enddef
+
+def KillHighlight()
+    StopTimer(timer_id)
+    RemoveHighlight(match_id)
 enddef
 
 augroup HighlightYanked
@@ -71,9 +81,5 @@ augroup END
 
 augroup KillHighlight
     autocmd!
-    autocmd WinLeave * if timer_id != -1
-        | timer_stop(timer_id)
-        | timer_id = -1
-        | RemoveHighlight(0)
-        | endif
+    autocmd WinLeave * KillHighlight()
 augroup END
