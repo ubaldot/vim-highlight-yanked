@@ -13,5 +13,4 @@ g:hlyanked_hlgroup = 'Visual'
 g:hlyanked_timeout = 400 # [ms]
 ```
 # License
-
-Same as Vim.
+BSD-3 Clause.
