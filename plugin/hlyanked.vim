@@ -15,7 +15,7 @@ endif
 g:hlyanked_loaded = 1
 
 if !exists('g:hlyanked_hlgroup')
-    g:hlyanked_hlgroup = 'IncSearch'
+    g:hlyanked_hlgroup = 'Visual'
 endif
 
 if !exists('g:hlyanked_timeout')
@@ -44,8 +44,9 @@ def HighlightYanked()
 
     # For understanding the following regex read :h \% and mind that \_.* are
     # all characters including new lines.
-    # It reads: "Take all characters, including newlines, from (l0,c0) to (l1,c1)"
-    var match_pattern = $'\%{l0}l\%{c0}c\_.*\%{l1}l\%{c1}c')
+    # The reged reads:
+    # 'Take all characters, including newlines, from (l0,c0) to (l1,c1)'
+    var match_pattern = $'\%{l0}l\%{c0}c\_.*\%{l1}l\%{c1}c'
     match_id = matchadd(g:hlyanked_hlgroup, match_pattern)
     timer_id = timer_start(g:hlyanked_timeout, 'RemoveHighlight')
 enddef
