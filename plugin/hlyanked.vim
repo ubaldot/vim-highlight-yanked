@@ -19,7 +19,7 @@ if !exists('g:hlyanked_hlgroup')
 endif
 
 if !exists('g:hlyanked_timeout')
-    g:hlyanked_timeout = 400
+    g:hlyanked_timeout = 2000
 endif
 
 # ----------------------------------------------------
@@ -66,5 +66,14 @@ augroup HighlightYanked
     autocmd!
     autocmd TextYankPost * if !v:event.visual && v:event.operator == 'y' && !empty(v:event.regtype)
         | HighlightYanked()
+        | endif
+augroup END
+
+augroup KillHighlight
+    autocmd!
+    autocmd WinLeave * if timer_id != -1
+        | timer_stop(timer_id)
+        | timer_id = -1
+        | RemoveHighlight(0)
         | endif
 augroup END
