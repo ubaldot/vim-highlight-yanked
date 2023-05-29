@@ -44,8 +44,9 @@ def HighlightYanked()
 
     # For understanding the following regex read :h \% and mind that \_.* are
     # all characters including new lines.
-    match_id = matchadd(g:hlyanked_hlgroup,
-                \ $'\%{l0}l\%{c0}c\_.*\%{l1}l\%{c1}c')
+    # It reads: "Take all characters, including newlines, from (l0,c0) to (l1,c1)"
+    var match_pattern = $'\%{l0}l\%{c0}c\_.*\%{l1}l\%{c1}c')
+    match_id = matchadd(g:hlyanked_hlgroup, match_pattern)
     timer_id = timer_start(g:hlyanked_timeout, 'RemoveHighlight')
 enddef
 
