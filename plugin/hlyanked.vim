@@ -3,7 +3,7 @@ vim9script noclear
 # Highlight yanked text.
 # Maintainer: Ubaldo Tiberi
 # License: same as Vim
-# GetLatestVimScripts: 6069 1 :AutoInstall: hlyanked.vim
+# GetLatestVimScripts: 6075 1 :AutoInstall: hlyanked.vim
 
 if !has('vim9script') ||  v:version < 900
     finish
