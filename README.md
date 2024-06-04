@@ -3,8 +3,7 @@
 Highlight yanked text for Vim9.
 
 <p align="center">
-<!-- <img src="/hlyanked.gif" width="60%" height="60%"> -->
-<img src="/hlyanked.mp4" width="60%" height="60%">
+<img src="/hlyanked.gif" width="60%" height="60%">
 </p>
 
 # Configuration
