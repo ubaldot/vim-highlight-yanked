@@ -17,7 +17,9 @@ g:hlyanked_timeout = 400 # [ms]
 When you yank some new text, the newly yanked text ends up in the '1' register
 and the content of the following registers is shifted by one (i.e. the content
 of register 2 is moved into register 3, the content of register 3 is moved
-into register 4 and so on). To disable such a behavior set:
+into register 4 and so on). In this way you never lose previously yanked text.
+
+To disable such a behavior set:
 
 ```
 g:hlyanked_save_yanks = false
