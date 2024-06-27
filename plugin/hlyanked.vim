@@ -22,6 +22,9 @@ if !exists('g:hlyanked_timeout')
     g:hlyanked_timeout = 400
 endif
 
+if !exists('g:hlyanked_save_yanks')
+    g:hlyanked_save_yanks = true
+endif
 # ----------------------------------------------------
 # The real deal follows
 
@@ -83,3 +86,17 @@ augroup KillHighlight
     autocmd!
     autocmd WinLeave * KillHighlight()
 augroup END
+
+
+def ShiftRegisters()
+    for ii in [8, 7, 6, 5, 4, 3, 2, 1, 0]
+      setreg(string(ii + 1), getreg(string(ii)))
+    endfor
+enddef
+
+if g:hlyanked_save_yanks
+    augroup YankShiftRegisters
+        autocmd!
+        autocmd TextYankPost * ShiftRegisters()
+    augroup END
+endif

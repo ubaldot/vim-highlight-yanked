@@ -37,6 +37,12 @@ Default: 400
 
 Highlight timeout value.
 
+                                                           *g:hlyanked_save_yanks*
+Type: |boolean|
+Default: true
+
+Save yanks in numbered registers.
+
 
 ------------------------------------------------------------------------------
 LICENSE                                                    *HlYankedLicense*
