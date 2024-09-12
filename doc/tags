@@ -4,5 +4,6 @@ HlYankedIntroduction	hlyanked.txt	/*HlYankedIntroduction*
 HlYankedLicense	hlyanked.txt	/*HlYankedLicense*
 HlYankedRequirements	hlyanked.txt	/*HlYankedRequirements*
 g:hlyanked_hlgroup	hlyanked.txt	/*g:hlyanked_hlgroup*
+g:hlyanked_save_yanks	hlyanked.txt	/*g:hlyanked_save_yanks*
 g:hlyanked_timeout	hlyanked.txt	/*g:hlyanked_timeout*
 hlyanked.txt	hlyanked.txt	/*hlyanked.txt*

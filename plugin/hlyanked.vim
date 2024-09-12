@@ -89,9 +89,10 @@ augroup END
 
 
 def ShiftRegisters()
-    for ii in [8, 7, 6, 5, 4, 3, 2, 1, 0]
+    for ii in [8, 7, 6, 5, 4, 3, 2]
       setreg(string(ii + 1), getreg(string(ii)))
     endfor
+    setreg(string(2), getreg(string(0)))
 enddef
 
 if g:hlyanked_save_yanks
