@@ -89,15 +89,15 @@ augroup END
 
 
 def ShiftRegisters()
-    for ii in [8, 7, 6, 5, 4, 3, 2]
+    setreg(string(2), getreg(string(0)))
+    for ii in [8, 7, 6, 5, 4, 3]
       setreg(string(ii + 1), getreg(string(ii)))
     endfor
-    setreg(string(2), getreg(string(0)))
 enddef
 
 if g:hlyanked_save_yanks
     augroup YankShiftRegisters
         autocmd!
-        autocmd TextYankPost * ShiftRegisters()
+        autocmd TextYankPost * if v:event.operator == 'y' | ShiftRegisters() | endif
     augroup END
 endif
