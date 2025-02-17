@@ -89,9 +89,7 @@ augroup END
 
 
 def ShiftRegisters()
-    # Don't touch "last deleted" register '1'
-    setreg(string(2), getreg(string(0)))
-    for ii in [8, 7, 6, 5, 4, 3, 2]
+    for ii in [8, 7, 6, 5, 4, 3, 2, 1, 0]
       setreg(string(ii + 1), getreg(string(ii)))
     endfor
 enddef
