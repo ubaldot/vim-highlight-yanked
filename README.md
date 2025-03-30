@@ -1,3 +1,7 @@
+> [!Note]
+> 
+> From Vim v9.1.1230 there is a bundled package to highlight yanked text. If you are running newer versions of Vim, then you should use the bundled package instead of this plugin. You can add the bundled package by adding `packadd! hlyank` in your `.vimrc` file. Enjoy! :) 
+
 # vim-highlight-yanked
 
 Highlight yanked text for Vim9.
