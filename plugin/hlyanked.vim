@@ -9,9 +9,6 @@ if !has('vim9script') ||  v:version < 900
     finish
 endif
 
-if exists('g:loaded_hlyanked')
-    finish
-endif
 g:loaded_hlyanked = 1
 
 if !exists('g:hlyanked_hlgroup')
