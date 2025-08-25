@@ -1,4 +1,4 @@
-vim9script noclear
+vim9script
 
 # Highlight yanked text.
 # Maintainer: Ubaldo Tiberi
